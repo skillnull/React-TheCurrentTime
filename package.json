@@ -1,0 +1,21 @@
+{
+  "name": "doc4es6",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "Document for ECMAScript6",
+  "main": "index.js",
+  "repository": "https://github.com/skillnull/doc4es6.git",
+  "author": "liyafei",
+  "license": "MIT"
+}
