@@ -1,15 +1,34 @@
-import React from 'react';
-import ReactDom from 'react-dom';
-import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import reducer from './reducers/index.js';
-import App from './containers/App.js';
+import React from 'react'
+import ReactDom from 'react-dom'
+import {Provider} from 'react-redux'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import configureStore from './store'
+import Index from './containers/Index.js'
+import FirstScreen from './containers/FirstScreen.js'
 
-let store = createStore(reducer);
+export const store = configureStore()
 
-ReactDom.render(
-    <Provider store={store}>
-        <App/>
-    </Provider>,
-    document.getElementById('root')
-);
+function listen () {
+    if (document.readyState == 'complete') { // 资源加载完成
+        ReactDom.render(
+            <Provider store={store}>
+                <Router>
+                    <Route path="/" component={Index}/>
+                </Router>
+            </Provider>,
+            document.getElementById('root')
+        )
+    } else { // 资源加载中
+        ReactDom.render(
+            <Provider store={store}>
+                <Router>
+                    <Route path="/" component={FirstScreen}/>
+                </Router>
+            </Provider>,
+            document.getElementById('root')
+        )
+    }
+}
+
+document.onreadystatechange = listen
+

@@ -1,0 +1,21 @@
+.localTimeBox {
+    display: flex;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.localTimeBox .localTimeDate {
+    display: flex;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.localTimeBox .localTimeTime {
+    display: flex;
+    flex: 2;
+    align-items: flex-start;
+    justify-content: center;
+}
